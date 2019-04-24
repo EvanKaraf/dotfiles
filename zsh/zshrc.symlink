@@ -1,5 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export ZSH=$HOME/.oh-my-zsh
+export DOTS=$HOME/dotfiles
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
@@ -14,7 +15,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=($DOTS/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -48,3 +49,31 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="agnoster"
+
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-autosuggestions)
+
+source ${HOME}/.oh-my-zsh/oh-my-zsh.sh
+
+
+DEFAULT_USER=evankaraf
+alias sshstart="sudo service ssh start;  sudo service fail2ban start"
+alias sshstop="sudo service ssh stop; sudo service fail2ban stop"
+alias simple="changeSimple && source ${HOME}/.zshrc"
+alias complex="changeComplex && source ${HOME}/.zshrc"
+alias ll="ls -la"
+alias ssh29="ssh sdi1500063@linux29.di.uoa.gr"
+alias ..="cd .."
+alias ....="cd ../.."
+alias vim="nvim"
+alias tmux="tmux -2"
