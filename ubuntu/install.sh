@@ -21,4 +21,4 @@ cd ~/.local/share/nautilus/scripts/
 wget -q https://raw.githubusercontent.com/emericg/OpenSubtitlesDownload/master/OpenSubtitlesDownload.py 1> /dev/null
 chmod u+x OpenSubtitlesDownload.py
 sed -i -r s/\'eng\'/\'eng,ell\'/ OpenSubtitlesDownload.py
-cd $DOTFILES_ROOT
+cd $DOTFILES_ROOTk
