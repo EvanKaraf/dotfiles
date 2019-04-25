@@ -77,3 +77,7 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias vim="nvim"
 alias tmux="tmux -2"
+
+#Eclipse-clp wrappers
+alias eclipse-clp='rlwrap eclipse-clp'
+alias jeclipse-clp='rlwrap jeclipse-clp'
