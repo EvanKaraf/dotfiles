@@ -3,6 +3,16 @@
 DOTFILES_ROOT=$(pwd -P)
 
 
+
+# Check if this is Ubuntu
+if [ "$(lsb_release -i | cut -f2)" != "Ubuntu" ]
+then
+    exit 0;
+fi
+
+
+
+
 echo "› Installing guake"
 sudo apt-get --assume-yes install guake 1> /dev/null
 
